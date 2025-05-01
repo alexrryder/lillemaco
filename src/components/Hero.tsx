@@ -42,7 +42,7 @@ const Hero = () => {
                 <Badge variant="secondary" className="bg-coral/20 text-coral font-semibold rounded-full px-4 py-1.5 text-sm shadow-sm">
                   New
                 </Badge>
-                <span className="text-sm text-charcoal/90 font-medium">Social media strategy for mom brands</span>
+                <span className="text-sm text-charcoal/90 font-medium">Now offering short-form video editing</span>
               </div>
             </div>
             
@@ -65,8 +65,11 @@ const Hero = () => {
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl mb-10 text-charcoal/80 max-w-xl mx-auto md:mx-0">
-              Strategy + Execution that speaks to mothers authentically. Transform your brand's connection with the motherhood community.
+            <p className="text-xl md:text-2xl mb-10 text-charcoal/80 max-w-xl mx-auto md:mx-0 leading-relaxed font-light">
+              <span className="font-medium text-coral">Authentic content</span> that resonates with mothers. 
+              We help your brand create <span className="font-medium">meaningful connections</span> in the 
+              motherhood community through <span className="italic">strategic storytelling</span> and 
+              <span className="font-medium"> expert execution</span>.
             </p>
             
             <div className="flex flex-col items-center md:items-start gap-6">
