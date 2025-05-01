@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Instagram, Facebook, Linkedin, Pin } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   const socialLinks = [
@@ -42,15 +43,19 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-charcoal text-white">
+    <footer className="bg-[#0D3C21] text-white">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Logo and newsletter */}
           <div className="md:col-span-4">
             <div className="mb-6">
-              <h2 className="text-2xl font-display font-bold">
-                <span className="text-coral">Lille</span> Ma & Co
-              </h2>
+              <Image
+                src="/logo.png"
+                alt="Lille Ma & Co Logo"
+                width={160}
+                height={160}
+                className="h-auto w-40 mb-4"
+              />
               <p className="mt-2 text-sm text-white/70">
                 Social Media Experts for Mom-Focused Brands
               </p>
@@ -63,7 +68,7 @@ const Footer = () => {
               </p>
               <div className="flex gap-2">
                 <Input className="bg-white/10 border-white/20 text-white" placeholder="Your email" />
-                <Button className="bg-coral hover:bg-coral/90">Subscribe</Button>
+                <Button className="bg-[#F2C858] hover:bg-[#F2C858]/90 text-[#0D3C21]">Subscribe</Button>
               </div>
             </div>
             
@@ -72,7 +77,7 @@ const Footer = () => {
                 <a 
                   key={link.name}
                   href={link.url} 
-                  className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
+                  className="bg-white/10 hover:bg-[#F2C858]/20 p-2 rounded-full transition-colors"
                   aria-label={link.name}
                 >
                   {link.icon}
@@ -86,11 +91,11 @@ const Footer = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {navGroups.map((group) => (
                 <div key={group.title}>
-                  <h3 className="font-medium mb-4">{group.title}</h3>
+                  <h3 className="font-medium mb-4 text-[#F2C858]">{group.title}</h3>
                   <ul className="space-y-2">
                     {group.links.map((link) => (
                       <li key={link.name}>
-                        <Link href={link.url} className="text-white/70 hover:text-coral transition-colors">
+                        <Link href={link.url} className="text-white/70 hover:text-[#F2C858] transition-colors">
                           {link.name}
                         </Link>
                       </li>
@@ -109,9 +114,9 @@ const Footer = () => {
             © {new Date().getFullYear()} Lille Ma & Co. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <Link href="#privacy" className="text-sm text-white/60 hover:text-white">Privacy Policy</Link>
-            <Link href="#terms" className="text-sm text-white/60 hover:text-white">Terms of Service</Link>
-            <Link href="#cookies" className="text-sm text-white/60 hover:text-white">Cookie Policy</Link>
+            <Link href="#privacy" className="text-sm text-white/60 hover:text-[#F2C858]">Privacy Policy</Link>
+            <Link href="#terms" className="text-sm text-white/60 hover:text-[#F2C858]">Terms of Service</Link>
+            <Link href="#cookies" className="text-sm text-white/60 hover:text-[#F2C858]">Cookie Policy</Link>
           </div>
         </div>
       </div>

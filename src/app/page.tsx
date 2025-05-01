@@ -19,8 +19,8 @@ export default function Home() {
       <Process />
       <Pricing />
       <About />
-      <FAQ />
       <CallToAction />
+      <FAQ />
       <Footer />
     </main>
   );

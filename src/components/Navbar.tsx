@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu } from "lucide-react";
 
 interface NavbarProps {
@@ -47,9 +48,14 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
           <Link href="#" className="flex items-center">
-            <h1 className="text-2xl font-display font-bold text-charcoal">
-              <span className="text-coral">Lille</span> Ma & Co
-            </h1>
+            <Image 
+              src="/logo.png" 
+              alt="Lille Ma & Co Logo" 
+              width={220} 
+              height={220} 
+              priority
+              className="h-28 w-auto py-2"
+            />
           </Link>
         </div>
         
@@ -59,16 +65,14 @@ const Navbar = () => {
             <NavigationMenuList>
               {navItems.map((item) => (
                 <NavigationMenuItem key={item.href}>
-                  <Link href={item.href} legacyBehavior passHref>
-                    <NavigationMenuLink 
-                      className={cn(
-                        navigationMenuTriggerStyle(),
-                        "text-charcoal hover:text-coral bg-transparent hover:bg-transparent"
-                      )}
-                    >
+                  <NavigationMenuLink asChild className={cn(
+                    navigationMenuTriggerStyle(),
+                    "text-charcoal hover:text-coral bg-transparent hover:bg-transparent"
+                  )}>
+                    <Link href={item.href}>
                       {item.label}
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               ))}
               <NavigationMenuItem>
@@ -90,7 +94,17 @@ const Navbar = () => {
               </Button>
             </SheetTrigger>
             <SheetContent>
-              <div className="flex flex-col space-y-4 mt-8">
+              <div className="mt-6 mb-8">
+                <Image 
+                  src="/logo.png" 
+                  alt="Lille Ma & Co Logo" 
+                  width={180} 
+                  height={180} 
+                  priority
+                  className="h-24 w-auto"
+                />
+              </div>
+              <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (
                   <Link 
                     key={item.href}

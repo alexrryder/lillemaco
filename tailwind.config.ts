@@ -82,12 +82,24 @@ const config = {
             opacity: '1',
             transform: 'translateY(0)'
           }
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+          '25%': { transform: 'translateY(-10px) rotate(2deg)' },
+          '50%': { transform: 'translateY(5px) rotate(-2deg)' },
+          '75%': { transform: 'translateY(-5px) rotate(1deg)' },
+        },
+        "draw-marker": {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" }
         }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        'fade-in': 'fade-in 0.5s ease-out forwards'
+        'fade-in': 'fade-in 0.5s ease-out forwards',
+        float: 'float 8s ease-in-out infinite',
+        "draw-marker": "draw-marker 1.2s ease-out forwards"
       },
       fontFamily: {
         'display': ['var(--font-playfair-display)'],
